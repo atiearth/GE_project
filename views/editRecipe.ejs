@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Recipe</title>
+  <link rel="icon" type="image/x-icon" href="/image/logo.png">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-main">
+   <!-- nav-bar -->
+   <div class="container-fluid">
+    <div class="nav-bar">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none mb-2 mb-md-0">
+          <img src="/image/logo.png" alt="Logo Description" width="40" height="40">
+          <h4><span class="header-icon">หุงเอง</span>กินเอง</h4>
+        </a>
+
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="/" class="nav-link px-2 link-dark">Home</a></li>
+          <li><a href="/user/recipe" class="nav-link px-2 link-dark">My Recipes</a></li>
+          <li><a href="/user/profile" class="nav-link px-2 link-dark">Profile</a></li>
+          <li><a href="/about" class="nav-link px-2 link-dark">About</a></li>
+        </ul>
+
+        <div class="col-12 col-md-3 text-center text-md-end">
+          <a href="/user/logout">
+            <button type="button" class="btn btn-outline-primary me-2 rounded-pill">Logout</button>
+          </a>
+          
+        </div>
+      </header>
+    </div>
+  </div>
+  <!-- end-nav -->
+
+  <!-- edit post -->
+  <div class="container">
+    <div class="editRecipe-box row justify-content-center">
+      <div class="col col-xl-8 col-lg-10">
+        <div class="card shadow-sm">
+          <div class="container pb-4 flex-grow-1">
+            <h1 class="text-center mt-5">Edit Recipe</h1>
+            <form action="/post/edit/<%= post.Post_Id %>" method="POST">
+              <div class="mb-3">
+                <label for="header" class="form-label">Food Name:</label>
+                <input type="text" class="form-control" id="header" name="header" value="<%= post.Header %>" required>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Ingredients:</label>
+                <div id="ingredients-container">
+                  <textarea id="ingredients" class="form-control" name="ingredients" required><%= post.Ingredients %></textarea>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label>How to Cook:</label>
+                <div id="steps-container">
+                  <textarea id="how_to" class="form-control" name="how_to" required><%= post.How_To %></textarea>
+                </div>
+                
+              </div>
+
+              <div class="button-group d-flex justify-content-center">
+                <a href="/user/recipe">
+                  <button type="button" class="btn btn-secondary me-5 btn-custom rounded-pill">Cancel</button>
+                </a>
+                <button type="submit" class="btn btn-primary rounded-pill">Edit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end edit post -->
+</body>
+
+<script src="/script/action.js"></script>
+<script src="/script/motion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>

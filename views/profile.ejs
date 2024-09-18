@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="/image/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column min-vh-100 bg-main">
+    <!-- nav-bar -->
+    <div class="container-fluid">
+        <div class="nav-bar">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center text-dark text-decoration-none mb-2 mb-md-0">
+                    <img src="/image/logo.png" alt="Logo Description" width="40" height="40">
+                    <h4><span class="header-icon">หุงเอง</span>กินเอง</h4>
+                </a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 link-dark">Home</a></li>
+                    <li><a href="/user/recipe" class="nav-link px-2 link-dark">My Recipes</a></li>
+                    <li><a href="/user/profile" class="nav-link px-2 link-dark">Profile</a></li>
+                    <li><a href="/about" class="nav-link px-2 link-dark">About</a></li>
+                </ul>
+
+                <div class="col-12 col-md-3 text-center text-md-end">
+                    <a href="/user/logout">
+                        <button type="button" class="btn btn-outline-primary me-2 rounded-pill">Logout</button>
+                    </a>
+
+                </div>
+            </header>
+        </div>
+    </div>
+    <!-- end-nav -->
+
+    <div class="container mt-5 flex-grow-1">
+        <h2>Account Details</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <p class="card-text"><strong>First name : </strong><%= user.First_Name %></p>
+                <p class="card-text"><strong>Last name : </strong><%= user.Last_Name %></p>
+                <p class="card-text"><strong>Email : </strong><%= user.Email %></p>
+
+                <div class="bt-custom">
+                    <a href="/user/edit">
+                        <button type="button" class="btn btn-sm btn-outline-secondary edit-btn">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                          </button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="/script/action.js"></script>
+<script src="/script/motion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>
